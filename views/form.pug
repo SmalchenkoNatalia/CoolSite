@@ -1,0 +1,53 @@
+div(class="card border-primary mb-3", style="flex: 3; ")
+	div(class="card-header", style="background-color: "+color+"; color: white; ")
+		if lang=="UKR"
+			h4(class="card-title", style="font-weight: bold; text-align: center; margin-bottom: 0rem") Форма заявки
+		else
+			h4(class="card-title", style="font-weight: bold; text-align: center; margin-bottom: 0rem") Application form
+	div(class="card-body")
+		form(name="applyForm")
+			if lang=="UKR"
+				div(class="form-group")
+					label(class="col-form-label", for="clientName") Ваше ім'я:
+					br
+					input(type="text",  class="form-control", placeholder="Введіть Ваше ім'я", name="clientName")
+				div(class="form-group")
+					label(class="col-form-label", for="clientSurname") Ваше прізвище:
+					br
+					input(type="text",  class="form-control", placeholder="Введіть Ваше прізвище", name="clientSurname")
+				div(class="form-group")
+					label(class="col-form-label", for="clientEmail") Ваш e-mail:
+					br
+					input(type="email",  class="form-control", placeholder="Введіть Ваш e-mail", name="clientEmail")
+				div(class="form-group")
+					label(class="col-form-label", for="clientPhone") Телефон (формат: +38 (ххх) ххххххх):
+					br
+					input(type="text",  class="form-control", placeholder="Введіть Ваш телефон", name="clientPhone")
+				div(class="form-group")
+					label(class="col-form-label", for="application") Текст заявки:
+					br
+					textarea(class="form-control", rows=3, name="application")
+				button(type="submit", class="btn btn-success btn-lg btn-block") Подати заявку
+			else
+				div(class="form-group")
+					label(class="col-form-label", for="clientName") Your name:
+					br
+					input(type="text",  class="form-control", placeholder="Enter Your name", name="clientName")
+				div(class="form-group")
+					label(class="col-form-label", for="clientSurname") Your surname:
+					br
+					input(type="text",  class="form-control", placeholder="Enter Your surname", name="clientSurname")
+				div(class="form-group")
+					label(class="col-form-label", for="clientEmail") Your e-mail:
+					br
+					input(type="text",  class="form-control", placeholder="Enter Your e-mail", name="clientEmail")
+				div(class="form-group")
+					label(class="col-form-label", for="clientPhone") Your phone (format: +38 (ххх) ххххххх)
+					br
+					input(type="text",  class="form-control", placeholder="Enter Your phone number", name="clientPhone")
+				div(class="form-group")
+					label(class="col-form-label", for="application") The text of the application
+					br
+					textarea(class="form-control", rows=3, name="application")
+				button(type="submit", class="btn btn-success btn-lg btn-block") Apply
+script(src="../scripts/applyAdd.js", id="applyAdd", data-src=lang+"."+confirmationMode.toString())
